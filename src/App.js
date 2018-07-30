@@ -46,32 +46,15 @@ const farItems = props => [
   }
 ];
 
-class Head extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      areNamesVisible: true,
-      areIconsVisible: true
-    };
-  }
-
-  render() {
-    const { items, farItems } = this.props;
-
-    return (
-      <div>
-        <CommandBar
-          items={items}
-          farItems={farItems}
-          ariaLabel={
-            'Use left and right arrow keys to navigate between commands'
-          }
-        />
-      </div>
-    );
-  }
-}
+const Head = props => (
+  <div>
+    <CommandBar
+      items={items}
+      farItems={farItems}
+      ariaLabel={'Use left and right arrow keys to navigate between commands'}
+    />
+  </div>
+);
 
 const head = props => <Head items={items(props)} farItems={farItems(props)} />;
 
